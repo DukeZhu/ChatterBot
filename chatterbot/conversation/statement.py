@@ -9,6 +9,8 @@ class Statement(object):
     phrase that someone can say.
     """
 
+    storage = None
+
     def __init__(self, text, **kwargs):
         self.text = text
         self.in_response_to = kwargs.pop('in_response_to', [])
@@ -22,8 +24,6 @@ class Statement(object):
         # this is an accurate response. This value is set when the
         # statement is returned by the chat bot.
         self.confidence = 0
-
-        self.storage = None
 
     def __str__(self):
         return self.text
